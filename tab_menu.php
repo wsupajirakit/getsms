@@ -19,5 +19,8 @@
     <i class="fa fa-user"></i>
     <span>Register</span>
   </div>
+  <div class="tab" onclick="location.href='login.php';">
+    <i class="fa fa-user"></i>
+    <span>Login</span>
+  </div>
 </div>
-

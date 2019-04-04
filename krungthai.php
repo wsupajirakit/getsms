@@ -25,21 +25,21 @@
 
         var table = $('#example').DataTable({
           "language": {
-              "lengthMenu": "แสดง _MENU_ ต่อหน้า",
-              "zeroRecords": "ไม่พบข้อมูล",
-              "info": "แสดงหน้า _PAGE_ จากทั้งหมด _PAGES_ หน้า",
-              "infoEmpty": "ไม่มีข้อมูล",
-              "infoFiltered": "(ค้นหาจากทั้งหมด _MAX_ total ข้อมูล)",
-              "search": "ค้นหา",
-              "paginate": {
-                "first": "หน้าแรก",
-                "last": "หน้าสุดท้าย",
-                "next": "ต่อไป",
-                "previous": "ก่อนหน้า"
-              }
-            }, 
+            "lengthMenu": "แสดง _MENU_ ต่อหน้า",
+            "zeroRecords": "ไม่พบข้อมูล",
+            "info": "แสดงหน้า _PAGE_ จากทั้งหมด _PAGES_ หน้า",
+            "infoEmpty": "ไม่มีข้อมูล",
+            "infoFiltered": "(ค้นหาจากทั้งหมด _MAX_ total ข้อมูล)",
+            "search": "ค้นหา",
+            "paginate": {
+              "first": "หน้าแรก",
+              "last": "หน้าสุดท้าย",
+              "next": "ต่อไป",
+              "previous": "ก่อนหน้า"
+            }
+          },
           ajax: {
-            url: 'http://35.187.245.178/ballbackend/webservice.php?operation=query&sessionName=65bf072b5c7fa8570c45c&query=select%20*%20from%20%20SMSIncome%20where%20bank=%27krungthai%27%20ORDER%20BY%20createdtime%20DESC;',
+            url: 'http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20*%20from%20%20SMSIncome%20where%20bank=%27krungthai%27%20ORDER%20BY%20createdtime%20DESC;',
             dataSrc: 'result',
           },
           // "order": [[ 2, "DESC" ]],
@@ -118,44 +118,36 @@
   </head>
 
   <body>
+    <div class="container">
+      <br>
+      <br>
+      <div class="row">
+        <table id="example" style="width:100%" class="table table-light table-striped table-hover">
+          <thead>
+            <tr>
+              <th>วันที่</th>
+              <th>เวลา</th>
+              <th width="13%">จำนวนเงิน</th>
+              <th>ธนาคาร</th>
+              <!-- <th>ข้อความ</th> -->
 
-    <br>
+            </tr>
 
 
-
-
-
-
-    <br>
-    <div class="row">
-      <table id="example" style="width:100%" class="table table-light table-striped table-hover">
-        <thead>
-          <tr>
-            <th>วันที่</th>
-            <th>เวลา</th>
-            <th width="13%">จำนวนเงิน</th>
-            <th>ธนาคาร</th>
-            <!-- <th>ข้อความ</th> -->
-
+          </thead>
           </tr>
 
-
-        </thead>
-        </tr>
-
-      </table>
-    </div>
-    <br>
-    <div class="row">
-
-
-
+        </table>
+      </div>
+      <br>
+      <div class="row">
+      </div>
     </div>
 
 
-<!-- start include tab menu -->
-<?php include "tab_menu.php" ?>
-<!-- end include tab menu -->
+    <!-- start include tab menu -->
+    <?php include "tab_menu.php" ?>
+      <!-- end include tab menu -->
 
 
 

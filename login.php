@@ -69,12 +69,15 @@
   </head>
 
   <body>
+
     <div class="limiter">
-  		<div class="container-register" >
+
+  		<div class="container-login" >
   			<div class="wrap-login p-l-110 p-r-110 p-t-20">
-  				<form class="login-form " id="form_register">
+  				<form class="login-form " id="form_login">
   					<span class="login-form-title p-b-5">
-  						สมัครสมาชิก
+  						เข้าสู่ระบบ
+
   					</span>
 
   					<div class="p-t-10 p-b-9">
@@ -92,29 +95,12 @@
   						</span>
   					</div>
             <div class="wrap-input" >
-              <input class="input" type="password"  id="password"  maxlength="15">
+              <input class="input" type="password" id="password" maxlength="15">
             </div>
-            <div class="p-t-13 p-b-9">
-              <span class="txt1">
-                Confirm Password
-              </span>
-            </div>
-            <div class="wrap-input" >
-              <input class="input" type="password" id="confirm_password"  maxlength="15">
-            </div>
-            <div class="p-t-13 p-b-9">
-              <span class="txt1">
-                Email
-              </span>
-            </div>
-            <div class="wrap-input" >
-              <input class="input" type="text" id="email" >
-            </div>
-
 
   					<div class="container-login-form-btn m-t-30 p-b-33">
-  						<button type="submit" class="login-form-btn" id="btn_register" >
-  							สมัครสมาชิก
+  						<button type="submit" class="login-form-btn" id="btn_login" >
+  							ล็อกอิน
   						</button>
   					</div>
   				</form>
@@ -136,4 +122,4 @@
   </html>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="js/tab_menu.js"></script>
-<script src="js/register.js"></script>
+<script src="js/login.js"></script>
