@@ -51,11 +51,23 @@ $(document).on('submit', '#form_login', function(e) {
     url: "http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=SELECT%20username%20,%20password%20FROM%20MMember%20WHERE%20username%20=%27" + username + "%27%20AND%20password%20=%27" + password + "%27;",
     method: "POST",
     success: function(response) {
+      // console.log(response);
       if (response.result != "") {
-        resetInput();
-        sweetAlert2('success', 'เข้าสู่ระบบแล้ว');
+        var user = {
+          username: response.result[0].username,
+          id: response.result[0].id,
+        };
 
+        // console.log(user);
+        	$.cookie('user', JSON.stringify(user), {
+        		expires: 7,
+        		path: '/'
+        	});
+          location.href="user.php";
 
+           // $.removeCookie('user', { path: '/' });
+        // resetInput();
+        // sweetAlert2('success', 'เข้าสู่ระบบแล้ว');
       } else {
         resetInput();
         sweetAlert2('error', 'Username หรือ Password ไม่ถูกต้อง');

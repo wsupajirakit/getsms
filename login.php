@@ -69,44 +69,46 @@
   </head>
 
   <body>
+      <div class="container">
+        <div class="limiter">
 
-    <div class="limiter">
+      		<div class="container-login" >
+      			<div class="wrap-login p-l-110 p-r-110 p-t-20">
+      				<form class="login-form " id="form_login">
+      					<span class="login-form-title p-b-5">
+      						เข้าสู่ระบบ
 
-  		<div class="container-login" >
-  			<div class="wrap-login p-l-110 p-r-110 p-t-20">
-  				<form class="login-form " id="form_login">
-  					<span class="login-form-title p-b-5">
-  						เข้าสู่ระบบ
+      					</span>
 
-  					</span>
+      					<div class="p-t-10 p-b-9">
+      						<span class="txt1">
+      							Username
+      						</span>
+      					</div>
+      					<div class="wrap-input" >
+      						<input class="input" type="text" id="username" onkeypress="return bannedKey(event)" maxlength="15">
+      					</div>
 
-  					<div class="p-t-10 p-b-9">
-  						<span class="txt1">
-  							Username
-  						</span>
-  					</div>
-  					<div class="wrap-input" >
-  						<input class="input" type="text" id="username" onkeypress="return bannedKey(event)" maxlength="15">
-  					</div>
+      					<div class="p-t-13 p-b-9">
+      						<span class="txt1">
+      							Password
+      						</span>
+      					</div>
+                <div class="wrap-input" >
+                  <input class="input" type="password" id="password" maxlength="15">
+                </div>
 
-  					<div class="p-t-13 p-b-9">
-  						<span class="txt1">
-  							Password
-  						</span>
-  					</div>
-            <div class="wrap-input" >
-              <input class="input" type="password" id="password" maxlength="15">
-            </div>
+      					<div class="container-login-form-btn m-t-30 p-b-33">
+      						<button type="submit" class="login-form-btn" id="btn_login" >
+      							ล็อกอิน
+      						</button>
+      					</div>
+      				</form>
+      			</div>
+      		</div>
+      	</div>
 
-  					<div class="container-login-form-btn m-t-30 p-b-33">
-  						<button type="submit" class="login-form-btn" id="btn_login" >
-  							ล็อกอิน
-  						</button>
-  					</div>
-  				</form>
-  			</div>
-  		</div>
-  	</div>
+    </div>
 
 
 

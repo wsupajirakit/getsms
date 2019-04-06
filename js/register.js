@@ -192,8 +192,3 @@ function bannedKey(evt) {
   }
 
 }
-$(document).ready(function() {
-
-
-
-});

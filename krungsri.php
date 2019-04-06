@@ -8,42 +8,46 @@
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
-
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
-    <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
-
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
-    <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
-
-
+    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+    <link href="assets/plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="assets/plugins/datatables.net/css/datatables.min.css" />
     <link rel="stylesheet" href="css/style.css">
 
 
     <script>
       $(document).ready(function() {
 
-        var table = $('#example').DataTable({
+        var table = $('#table').DataTable({
           "language": {
-            "lengthMenu": "แสดง _MENU_ ต่อหน้า",
-            "zeroRecords": "ไม่พบข้อมูล",
-            "info": "แสดงหน้า _PAGE_ จากทั้งหมด _PAGES_ หน้า",
-            "infoEmpty": "ไม่มีข้อมูล",
-            "infoFiltered": "(ค้นหาจากทั้งหมด _MAX_ total ข้อมูล)",
-            "search": "ค้นหา",
+            "decimal": "",
+            "emptyTable": "ไม่พบข้อมูล",
+            "info": "แสดง _START_ ถึง _END_ จาก _TOTAL_ รายการ",
+            "infoEmpty": "แสดง 0 ถึง 0 จาก 0 รายการ",
+            "infoFiltered": "(ค้นหา จากทั้งหมด _MAX_ รายการ )",
+            "infoPostFix": "",
+            "thousands": ",",
+            "lengthMenu": "แสดง _MENU_ รายการ",
+            "loadingRecords": "Loading...",
+            "processing": "Processing...",
+            "search": "ค้นหา:",
+            "zeroRecords": "ไม่พบข้อมูลที่ค้นหา",
             "paginate": {
               "first": "หน้าแรก",
               "last": "หน้าสุดท้าย",
-              "next": "ต่อไป",
-              "previous": "ก่อนหน้า"
+              "next": "ถัดไป",
+              "previous": "ย้อนกลับ"
+            },
+            "aria": {
+              "sortAscending": ": activate to sort column ascending",
+              "sortDescending": ": activate to sort column descending"
             }
           },
+          "ordering": false,
 
           ajax: {
             url: 'http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20*%20from%20%20SMSIncome%20where%20bank=%27krungsri%27%20ORDER%20BY%20createdtime%20DESC;',
             dataSrc: 'result',
           },
-          // "order": [[ 2, "DESC" ]],
           columns: [{
               data: 'date'
             }, {
@@ -53,38 +57,10 @@
             }, {
               data: 'bank'
             },
-            // { data: 'cf_971' }
 
           ]
 
         });
-        //
-        // setInterval(function(){
-        //   $("#example").dataTable().fnDestroy();
-        //   $('#example').DataTable( {
-        //   ajax: {
-        //       url: 'http://35.186.154.13/pdkbackend1/webservice.php?operation=query&sessionName=7748431c5c98b43c15910&query=select%20*%20from%20IncomeX%20ORDER%20BY%20date%20DESC;',
-        //       dataSrc: 'result'
-        //   },
-        //   "aaSorting": [ [1,'desc'], [2,'desc'] ],
-        //            columns: [
-        //
-        //              { data: 'date' },
-        //              { data: 'time' },
-        //              { data: 'income' },
-        //               { data: 'cf_969' },
-        //               { data: 'cf_971' }
-        //
-        //                            ]
-        //                     } );
-        //
-        //                     // alert('refresh')
-        //
-        //
-        //
-        //
-        //
-        //         },1000);
 
         setInterval(function() {
           table.ajax.reload(null, false);
@@ -98,7 +74,10 @@
     </script>
 
     <style>
-      body {
+    @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700");
+
+    body {
+      font-family: "Kanit", sans-serif;
         background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1200/13627/blue-mountains-clouds-distance-perspective-skies-1920x1200-wallpaper.jpg")!important;
         background-position: center center;
         background-repeat: no-repeat;
@@ -118,28 +97,27 @@
 
   <body>
     <div class="container">
-      <br>
-      <br>
-      <div class="row">
-        <div class="table-responsive">
-          <table id="example" style="width:100%" class="table table-light table-striped table-hover">
-            <thead>
-              <tr>
-                <th>วันที่</th>
-                <th>เวลา</th>
-                <th width="13%">จำนวนเงิน</th>
-                <th>ธนาคาร</th>
-              </tr>
-
-            </thead>
-            </tr>
-
-          </table>
+      <div class="row" style="margin-top:20px;">
+        <div class="col-12">
+          <div class="card" style="margin-bottom:50px;">
+            <div class="card-body">
+                <div class="table-responsive" style="margin-top:20px;">
+                  <table id="table" class="table table-bordered">
+                    <thead>
+                      <tr>
+                        <th>วันที่</th>
+                        <th>เวลา</th>
+                        <th width="13%">จำนวนเงิน</th>
+                        <th>ธนาคาร</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                    </tbody>
+                  </table>
+                </div>
+            </div>
+          </div>
         </div>
-
-      </div>
-      <br>
-      <div class="row">
       </div>
     </div>
 
@@ -154,4 +132,6 @@
   </body>
 
   </html>
+  <script src="assets/plugins/bootstrap/dist/js/bootstrap.js"></script>
+  <script type="text/javascript" src="assets/plugins/datatables.net/js/datatables.min.js"></script>
   <script src="js/tab_menu.js"></script>
