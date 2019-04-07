@@ -4,7 +4,7 @@
 
   <head>
     <meta charset="UTF-8">
-    <title>Krungsri</title>
+    <title>User</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
@@ -12,8 +12,6 @@
     <link href="assets/plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables.net/css/datatables.css" />
     <link rel="stylesheet" href="css/style.css">
-
-
 
 
     <style>
@@ -26,7 +24,7 @@
         background-attachment: fixed;
         background-size: cover;
         background-color: #464646;
-        
+
       }
 
       table.dataTable {
@@ -41,6 +39,7 @@
   </head>
 
   <body>
+
 <!-- -fluid -->
     <div class="container">
       <div class="modal fade" id="modal_update" tabindex="-1" role="dialog" aria-labelledby="myLargeModalLabel" aria-hidden="true" style="display: none;">
@@ -83,8 +82,6 @@
                     <input class="input" type="text" id="email_update">
                   </div>
                 </div>
-
-
               </div>
 
             </div>
