@@ -24,7 +24,8 @@
         background-attachment: fixed;
         background-size: cover;
         background-color: #464646;
-        padding-right: 0 !important;
+        padding-right: 0 !important;/* sweetalert2 */
+
 
       }
 
@@ -87,8 +88,8 @@
 
             </div>
             <div class="modal-footer">
-              <button class="btn btn-danger" data-dismiss="modal"> ยกเลิก</button>
-              <button type="submit" id="btn_update" class="btn btn-success"> แก้ไข</button>
+              <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> ยกเลิก</button>
+              <button type="submit" id="btn_update" class="btn btn-success"><i class="fa fa-save"></i> แก้ไข</button>
             </div>
           </div>
         </div>
@@ -146,8 +147,8 @@
 
             </div>
             <div class="modal-footer">
-              <button class="btn btn-danger" data-dismiss="modal"> ยกเลิก</button>
-              <button type="submit" id="btn_save" class="btn btn-success"> บันทึก</button>
+              <button class="btn btn-danger" data-dismiss="modal"><i class="fa fa-close"></i> ยกเลิก</button>
+              <button type="submit" id="btn_save" class="btn btn-success"><i class="fa fa-save"></i> บันทึก</button>
             </div>
           </div>
         </div>
@@ -162,7 +163,7 @@
                 <div class="row">
                   <div class="col-md-12">
                     <div class="text-right">
-                      <button class="btn btn-success" id="btn_add"> เพิ่มผู้ใช้งาน</button>
+                      <button class="btn btn-success" id="btn_add"><i class="fa fa-plus"></i> เพิ่มผู้ใช้งาน</button>
                     </div>
                   </div>
                 </div>

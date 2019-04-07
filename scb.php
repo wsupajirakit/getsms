@@ -83,8 +83,10 @@
         background-attachment: fixed;
         background-size: cover;
         background-color: #464646;
-        padding-right: 0 !important;
-        
+        padding-right: 0 !important;/* sweetalert2 */
+
+
+
       }
 
       table.dataTable {

@@ -47,7 +47,7 @@ $(document).ready(function() {
         // sortable: false,
         className: 'text-center',
         "render": function(data, type, full, meta) {
-          return '<button class="btn btn-warning btn_update text-white" data-id=' + full.id + ' data-username=' + full.username + ' data-password=' + full.password + ' data-email=' + full.email + '  style="margin-right:5px">แก้ไข</button>' + '<button class="btn btn-danger btn_delete"  data-id=' + full.id + ' data-username=' + full.username + '>ลบ</button>';
+          return '<button class="btn btn-warning btn_update text-white" data-id=' + full.id + ' data-username=' + full.username + ' data-password=' + full.password + ' data-email=' + full.email + '  style="margin-right:5px"><i class="fa fa-edit"></i> แก้ไข</button>' + '<button class="btn btn-danger btn_delete"  data-id=' + full.id + ' data-username=' + full.username + '><i class="fa fa-trash"></i> ลบ</button>';
         }
 
       }
