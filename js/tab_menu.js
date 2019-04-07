@@ -83,6 +83,7 @@ $(window).scroll(function(event) {
     // $('.tab-bar').show();
   }
   lastScrollTop = st;
+  console.log(lastScrollTop);
 });
 var currentMousePos = {
   x: -1,
@@ -91,12 +92,24 @@ var currentMousePos = {
 $(document).mousemove(function(event) {
   currentMousePos.x = event.pageX;
   currentMousePos.y = event.pageY;
+  var w = window.innerWidth;
+  var h = window.innerHeight;
+  var body = $('body').height();
+
+  // var posFromBottom = h-event.pageY;
   //   console.log(lastScrollTop);
   // console.log(currentMousePos);
-  if (currentMousePos.y > 900) {
-    $('.tab-bar').fadeIn(300);
+  // console.log($(window).width() - event.pageX);
+  // var check = $(window).height() - event.pageY;
+  // console.log('h'+body);
+  // console.log(currentMousePos.y);
+
+  if (currentMousePos.y + 100 > body) {
+    $('.tab-bar').fadeIn(30);
   }
+  
 });
+
 // $(window).on("scroll", function() {
 // 	var scrollHeight = $(document).height();
 // 	var scrollPosition = $(window).height() + $(window).scrollTop();

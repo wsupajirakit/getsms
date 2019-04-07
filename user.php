@@ -155,7 +155,7 @@
       </div>
 
 
-      <div  style="padding-top:50px;padding-bottom:50px;">
+      <div  style="padding-top:20px;padding-bottom:50px;">
         <div class="row" >
           <div class="col-12">
             <div class="card">
@@ -168,7 +168,7 @@
                   </div>
                 </div>
                   <div class="table-responsiv" style="margin-top:20px;">
-                    <table id="table" class="table table-bordered" style="height:200px;">
+                    <table id="table" class="table table-bordered">
                       <thead>
                         <tr>
                           <th>Username</th>

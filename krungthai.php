@@ -48,7 +48,8 @@
               "sortDescending": ": activate to sort column descending"
             }
           },
-          "ordering": false,
+            "order": [[ 0, "desc" ]],
+          // "ordering": false,
           ajax: {
             url: 'http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20*%20from%20%20SMSIncome%20where%20bank=%27krungthai%27%20ORDER%20BY%20createdtime%20DESC;',
             dataSrc: 'result',
