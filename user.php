@@ -24,6 +24,7 @@
         background-attachment: fixed;
         background-size: cover;
         background-color: #464646;
+        padding-right: 0 !important;
 
       }
 
