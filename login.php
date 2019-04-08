@@ -9,11 +9,16 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <link rel="stylesheet" type="text/css" href="css/util.css">
+    <link href="assets/plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
 
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet">
+    <!-- <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.0.0/css/bootstrap.css" rel="stylesheet"> -->
     <!-- <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet"> -->
 
-    <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <!-- <script src="https://code.jquery.com/jquery-3.3.1.js"></script> -->
+    <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+
+    <script src="assets/plugins/jquery/dist/jquery.cookie.js"></script>
+
     <!-- <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script> -->
 
@@ -24,7 +29,7 @@
 
 
     <style>
-      @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700");
+
 
       .btn-circle.btn-xl {
         width: 200px;
@@ -50,8 +55,7 @@
       }
 
       body {
-        font-family: "Kanit", sans-serif;
-        background-image: url("https://downloadwallpaper.org/wp-content/uploads/2017/07/papers-co-md-nature-earth-dark-asleep-mountain-night-iphone-plus-wallpaper-wp3609354.jpg")!important;
+        background-image: url("assets/images/bg/bg2.jpg")!important;
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -116,15 +120,16 @@
 
 
 
-<!-- start include tab menu -->
-<?php include "tab_menu.php" ?>
-<!-- end include tab menu -->
+    <!-- start include tab menu -->
+    <div id="tab_memnu"></div>
+    <!-- end include tab menu -->
 
 
 
   </body>
 
   </html>
+<script src="assets/plugins/bootstrap/dist/js/bootstrap.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="js/tab_menu.js"></script>
 <script src="js/login.js"></script>

@@ -13,6 +13,8 @@
     <link href="https://cdn.datatables.net/1.10.16/css/dataTables.bootstrap4.min.css" rel="stylesheet">
 
     <script src="https://code.jquery.com/jquery-3.3.1.js"></script>
+    <script src="assets/plugins/jquery/dist/jquery.cookie.js"></script>
+
     <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
     <script src="https://cdn.datatables.net/1.10.16/js/dataTables.bootstrap4.min.js"></script>
 
@@ -83,11 +85,10 @@
     </script>
 
     <style>
-    @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700");
+
 
     body {
-      font-family: "Kanit", sans-serif;
-        background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1200/13627/blue-mountains-clouds-distance-perspective-skies-1920x1200-wallpaper.jpg")!important;
+
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -109,7 +110,7 @@
 
   <body>
     <div class="container">
-      <div class="row" style="margin-top:50px;">
+      <div class="row" style="margin-top:20px;">
         <div class="col-12">
           <div class="card">
             <div class="card-body">
@@ -134,8 +135,8 @@
     </div>
 
     <!-- start include tab menu -->
-    <?php include "tab_menu.php" ?>
-      <!-- end include tab menu -->
+    <div id="tab_memnu"></div>
+    <!-- end include tab menu -->
 
 
 
@@ -145,3 +146,5 @@
   <script src="assets/plugins/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="assets/plugins/datatables.net/js/datatables.min.js"></script>
   <script src="js/tab_menu.js"></script>
+  <script src="js/check_login.js"></script>
+  

@@ -9,6 +9,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css'>
     <script src="assets/plugins/jquery/dist/jquery.min.js"></script>
+    <script src="assets/plugins/jquery/dist/jquery.cookie.js"></script>
     <link href="assets/plugins/bootstrap/dist/css/bootstrap.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="assets/plugins/datatables.net/css/datatables.min.css" />
     <link rel="stylesheet" href="css/style.css">
@@ -75,11 +76,10 @@
     </script>
 
     <style>
-    @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700");
+
 
     body {
-      font-family: "Kanit", sans-serif;
-        background-image: url("https://cdn.allwallpaper.in/wallpapers/1920x1200/13627/blue-mountains-clouds-distance-perspective-skies-1920x1200-wallpaper.jpg")!important;
+
         background-position: center center;
         background-repeat: no-repeat;
         background-attachment: fixed;
@@ -128,8 +128,8 @@
 
 
     <!-- start include tab menu -->
-    <?php include "tab_menu.php" ?>
-      <!-- end include tab menu -->
+    <div id="tab_memnu"></div>
+    <!-- end include tab menu -->
 
 
 
@@ -139,3 +139,5 @@
   <script src="assets/plugins/bootstrap/dist/js/bootstrap.js"></script>
   <script type="text/javascript" src="assets/plugins/datatables.net/js/datatables.min.js"></script>
   <script src="js/tab_menu.js"></script>
+  <script src="js/check_login.js"></script>
+  

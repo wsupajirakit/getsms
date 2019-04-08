@@ -78,7 +78,9 @@ $(document).on('submit', '#form_register', function(e) {
     "username": username,
     "assigned_user_id": "19x1",
     "password": password,
-    "email": email
+    "email": email,
+    "role": "user"
+
   };
 
   dataJson = JSON.stringify(data);

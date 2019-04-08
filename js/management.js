@@ -27,7 +27,7 @@ $(document).ready(function() {
       }
     },
     "ordering": false,
-     // "scrollCollapse": true,
+    // "scrollCollapse": true,
 
     ajax: {
       url: 'http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20%2A%20from%20%20MMember%20ORDER%20BY%20createdtime%20DESC;',
@@ -36,18 +36,17 @@ $(document).ready(function() {
     columns: [{
 
         data: 'username'
-      }
-      // ,
-      // {
-      //   data: 'password'
-      // }
-      , {
-        data: 'email'
       }, {
+        data: 'email'
+      },
+      {
+        data: 'role'
+      },
+      {
         // sortable: false,
         className: 'text-center',
         "render": function(data, type, full, meta) {
-          return '<button class="btn btn-warning btn_update text-white" data-id=' + full.id + ' data-username=' + full.username + ' data-password=' + full.password + ' data-email=' + full.email + '  style="margin-right:5px"><i class="fa fa-edit"></i> แก้ไข</button>' + '<button class="btn btn-danger btn_delete"  data-id=' + full.id + ' data-username=' + full.username + '><i class="fa fa-trash"></i> ลบ</button>';
+          return '<button class="btn btn-warning btn_update text-white" data-role=' + full.role + ' data-id=' + full.id + ' data-username=' + full.username + ' data-password=' + full.password + ' data-email=' + full.email + '  style="margin-right:5px"><i class="fa fa-edit"></i> แก้ไข</button>' + '<button class="btn btn-danger btn_delete"  data-id=' + full.id + ' data-username=' + full.username + '><i class="fa fa-trash"></i> ลบ</button>';
         }
 
       }
@@ -58,7 +57,7 @@ $(document).ready(function() {
 
   setInterval(function() {
     table.ajax.reload(null, false);
-  }, 1000*500);
+  }, 1000 * 500);
 
 });
 
@@ -82,8 +81,12 @@ $(document).on('click', '#btn_save', function() {
   var password = $('#password').val();
   var confirm_password = $('#confirm_password').val();
   var email = $('#email').val();
-
-
+  var role = $('#role').val();
+  if (role == "") {
+    $('#role').focus();
+    sweetAlert2('warning', 'กรุณาเลือกตำแหน่ง');
+    return false;
+  }
   if (username.length == 0) {
     $('#username').focus();
     sweetAlert2('warning', 'กรุณากรอกข้อมูล Username');
@@ -143,7 +146,9 @@ $(document).on('click', '#btn_save', function() {
     "username": username,
     "assigned_user_id": "19x1",
     "password": password,
-    "email": email
+    "email": email,
+    "role": role
+
   };
 
   dataJson = JSON.stringify(data);
@@ -156,6 +161,7 @@ $(document).on('click', '#btn_save', function() {
     "mimeType": "multipart/form-data",
     "data": formData,
     "success": function(response) {
+      console.log(response);
       resetSave();
       $('#modal_save').modal('toggle');
       const Toast = Swal.mixin({
@@ -166,7 +172,7 @@ $(document).on('click', '#btn_save', function() {
       });
       Toast.fire({
         type: 'success',
-        title: 'สมัครสมาชิกเรียบร้อยแล้ว'
+        title: 'เพิ่มผู้ใช้งานเรียบร้อยแล้ว'
       });
       var table = $('#table').DataTable();
       table.ajax.reload();
@@ -176,6 +182,14 @@ $(document).on('click', '#btn_save', function() {
       sweetAlert2('warning', 'การเชื่อมต่อขัดข้อง');
     }
   }
+  Swal.fire({
+      title: "แจ้งเตือน",
+      text: "กรุณารอสักครู่..",
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+    }),
+    Swal.showLoading();
   $.ajax({
     url: "http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20username%20from%20MMember%20where%20username=%27" + username + "%27;",
     method: "POST",
@@ -220,9 +234,12 @@ $(document).on('click', '.btn_update', function() {
   var username = $(this).data("username");
   var password = $(this).data("password");
   var email = $(this).data("email");
+  var role = $(this).data("role");
+
   $('#username_update').val(username);
   $('#password_update').val(password);
   $('#email_update').val(email);
+  $('#role_update').val(role);
   $('#modal_update').modal('toggle');
 
 });
@@ -230,16 +247,18 @@ $(document).on('click', '#btn_update', function() {
   var username = $('#username_update').val();
   var password = $('#password_update').val();
   var email = $('#email_update').val();
-  if (username.length == 0) {
-    $('#username').focus();
-    sweetAlert2('warning', 'กรุณากรอกข้อมูล Username');
-    return false;
-  }
-  if (username.length < 5) {
-    $('#username').focus();
-    sweetAlert2('warning', 'Username ต้องมีความยาว 5 ตัวอักษรขึ้นไป');
-    return false;
-  }
+  var role = $('#role_update').val();
+
+  // if (username.length == 0) {
+  //   $('#username').focus();
+  //   sweetAlert2('warning', 'กรุณากรอกข้อมูล Username');
+  //   return false;
+  // }
+  // if (username.length < 5) {
+  //   $('#username').focus();
+  //   sweetAlert2('warning', 'Username ต้องมีความยาว 5 ตัวอักษรขึ้นไป');
+  //   return false;
+  // }
   if (password.length == 0) {
     $('#password').focus();
     sweetAlert2('warning', 'กรุณากรอกข้อมูล Password');
@@ -250,20 +269,7 @@ $(document).on('click', '#btn_update', function() {
     sweetAlert2('warning', 'Password ต้องมี 8 ตัวอักษรขึ้นไป');
     return false;
   }
-  // if (confirm_password.length == 0) {
-  //   $('#confirm_password').focus();
-  //   sweetAlert2('warning', 'กรุณากรอกข้อมูล Confirm Password');
-  //   return false;
-  // }
-  // if (confirm_password.length < 8) {
-  //   $('#confirm_password').focus();
-  //   sweetAlert2('warning', 'Confirm Password ต้องมี 8 ตัวอักษรขึ้นไป');
-  //   return false;
-  // }
-  // if (confirm_password != password) {
-  //   sweetAlert2('warning', 'Password และ Confirm Password ไม่ถูกต้อง');
-  //   return false;
-  // }
+
   if (email.trim().length == 0) {
     sweetAlert2('warning', 'กรุณากรอกข้อมูล Email');
     return false;
@@ -273,14 +279,14 @@ $(document).on('click', '#btn_update', function() {
     sweetAlert2('warning', 'Email ไม่ถูกต้อง');
     return false;
   }
-  // Swal.fire({
-  //     title: "แจ้งเตือน",
-  //     text: "กรุณารอสักครู่..",
-  //     showConfirmButton: false,
-  //     allowOutsideClick: false,
-  //     allowEscapeKey: false
-  //   }),
-  //   Swal.showLoading();
+  Swal.fire({
+      title: "แจ้งเตือน",
+      text: "กรุณารอสักครู่..",
+      showConfirmButton: false,
+      allowOutsideClick: false,
+      allowEscapeKey: false
+    }),
+    Swal.showLoading();
   $.ajax({
     url: "http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=select%20email%20from%20MMember%20where%20email=%27" + email + "%27;",
     method: "POST",
@@ -290,7 +296,9 @@ $(document).on('click', '#btn_update', function() {
         "username": username,
         "assigned_user_id": "19x1",
         "password": password,
-        "email": email
+        "email": email,
+        "role": role
+
       };
       if (response.result != "") {
         if (response.result[0].id != id) {
@@ -298,12 +306,11 @@ $(document).on('click', '#btn_update', function() {
             sweetAlert2('warning', 'Email มีผู้ใช้งานแล้ว');
             return false;
           }
-        }
-        else{
+        } else {
           updateUser(data);
         }
 
-      }else {
+      } else {
         updateUser(data);
       }
 
@@ -352,6 +359,14 @@ $(document).on('click', '.btn_delete', function() {
             sweetAlert2('warning', 'การเชื่อมต่อขัดข้อง');
           }
         }
+        Swal.fire({
+            title: "แจ้งเตือน",
+            text: "กรุณารอสักครู่..",
+            showConfirmButton: false,
+            allowOutsideClick: false,
+            allowEscapeKey: false
+          }),
+          Swal.showLoading();
         $.ajax(settings).done(function(response) {
           const Toast = Swal.mixin({
             toast: true,
@@ -404,6 +419,7 @@ function bannedKey(evt) {
 function resetSave() {
   $('#username').val('');
   $('#password').val('');
+  $('#role').val('');
   $('#confirm_password').val('');
   $('#email').val('');
 }

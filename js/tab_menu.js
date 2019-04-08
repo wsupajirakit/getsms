@@ -1,73 +1,51 @@
-$(document).ready(function() {
-  // var user = $.cookie('user');
-  // $.removeCookie('user', { path: '/' });
-  var pathname = window.location.pathname.match(/[^\/]+$/)[0];
-  // var click = $('.tab').attr('onclick').split('location.href=\'').pop().slice(0, -2);
-  if (pathname == 'index.php') {
-    $('.tab:eq(0)').addClass(' current');
-  } else if (pathname == 'scb.php') {
-    $('.tab:eq(1)').addClass(' current');
-  } else if (pathname == 'krungsri.php') {
-    $('.tab:eq(2)').addClass(' current');
-  } else if (pathname == 'krungthai.php') {
-    $('.tab:eq(3)').addClass(' current');
-  } else if (pathname == 'user.php') {
-    $('.tab:eq(4)').addClass(' current');
-  } else if (pathname == 'register.php') {
-    $('.tab:eq(5)').addClass(' current');
-  } else if (pathname == 'login.php') {
-    $('.tab:eq(6)').addClass(' current');
+var user = $.cookie('user');
+
+// console.log(user);
+if (user != null) {
+  user = JSON.parse(user);
+} else {
+  user = {
+    'role': ""
   }
-  // checkLogin(user);
+}
+
+// console.log(user);
+// $.removeCookie('user', {
+//   path: '/'
+// });
+$(document).ready(function() {
+
+  if (user.role == "admin") {
+    $("#tab_memnu").load('tab_menu_admin.php');
+  } else if (user.role == "manager") {
+    $("#tab_memnu").load('tab_menu_manager.php');
+  } else if (user.role == "user") {
+    $("#tab_memnu").load('tab_menu_user.php');
+  } else {
+    $("#tab_memnu").load('tab_menu_login.php');
+    // location.href = "login.php";
+  }
+
+  // if (pathname == 'index.php') {
+  //   $('.tab:eq(0)').addClass(' current');
+  // } else if (pathname == 'scb.php') {
+  //   $('.tab:eq(1)').addClass(' current');
+  // } else if (pathname == 'krungsri.php') {
+  //   $('.tab:eq(2)').addClass(' current');
+  // } else if (pathname == 'krungthai.php') {
+  //   $('.tab:eq(3)').addClass(' current');
+  // } else if (pathname == 'management.php') {
+  //   $('.tab:eq(4)').addClass(' current');
+  // } else if (pathname == 'register.php') {
+  //   $('.tab:eq(5)').addClass(' current');
+  // } else if (pathname == 'login.php') {
+  //   $('.tab:eq(6)').addClass(' current');
+  // }
+
+
 
 });
 
-// function checkLogin(user) {
-//   console.log(user);
-//   if (user != null) {
-//     $('.tab:eq(6)').css('display', 'none');
-//   }
-//   $(document).on('click', '.tab:eq(0)', function() {
-//     if (user != null) {
-//       location.href = 'index.php';
-//     } else {
-//       location.href = 'login.php';
-//     }
-//   });
-//   $(document).on('click', '.tab:eq(1)', function() {
-//     if (user != null) {
-//       location.href = 'scb.php';
-//     } else {
-//       location.href = 'login.php';
-//     }
-//   });
-//   $(document).on('click', '.tab:eq(2)', function() {
-//     if (user != null) {
-//       location.href = 'krungsri.php';
-//     } else {
-//       location.href = 'login.php';
-//     }
-//   });
-//
-//   $(document).on('click', '.tab:eq(3)', function() {
-//     if (user != null) {
-//       location.href = 'krungthai.php';
-//     } else {
-//       location.href = 'login.php';
-//     }
-//   });
-//   $(document).on('click', '.tab:eq(4)', function() {
-//     location.href = 'user.php';
-//   });
-//   $(document).on('click', '.tab:eq(5)', function() {
-//     location.href = 'register.php';
-//   });
-//   $(document).on('click', '.tab:eq(6)', function() {
-//     location.href = 'login.php';
-//   });
-//
-//
-// }
 var lastScrollTop = 0;
 $(window).scroll(function(event) {
   var st = $(this).scrollTop();
@@ -83,7 +61,7 @@ $(window).scroll(function(event) {
     // $('.tab-bar').show();
   }
   lastScrollTop = st;
-  console.log(lastScrollTop);
+  // console.log(lastScrollTop);
 });
 var currentMousePos = {
   x: -1,
@@ -107,7 +85,7 @@ $(document).mousemove(function(event) {
   if (currentMousePos.y + 100 > body) {
     $('.tab-bar').fadeIn(30);
   }
-  
+
 });
 
 // $(window).on("scroll", function() {
@@ -118,3 +96,7 @@ $(document).mousemove(function(event) {
 //        $('.tab-bar').fadeIn(300);
 // 	}
 // });
+
+
+
+// $.removeCookie('user', { path: '/' });
