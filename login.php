@@ -133,3 +133,4 @@
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
 <script src="js/tab_menu.js"></script>
 <script src="js/login.js"></script>
+<!-- <script src="js/check_login.js"></script> -->

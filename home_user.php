@@ -67,4 +67,5 @@
   <script src="assets/plugins/bootstrap/dist/js/bootstrap.js"></script>
   <script src="js/tab_menu.js"></script>
   <script src="js/check_login.js"></script>
+  <script src="js/check_role_user.js"></script>
   

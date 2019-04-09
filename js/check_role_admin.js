@@ -1,4 +1,4 @@
-if (user.role == "") {
+if (user.role != "admin") {
     location.href = "login.php";
 }
 // else if (user.role == "admin") {

@@ -3,7 +3,7 @@
     <i class="fa fa-home"></i>
     <span>Home</span>
   </div>
-  <div class="tab" onclick="location.href = 'index.php'">
+  <div class="tab" onclick="location.href = 'index-manager.php'">
     <i class="fa fa-coffee"></i>
     <span>Banking</span>
   </div>

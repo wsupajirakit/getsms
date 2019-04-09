@@ -147,4 +147,5 @@
   <script type="text/javascript" src="assets/plugins/datatables.net/js/datatables.min.js"></script>
   <script src="js/tab_menu.js"></script>
   <script src="js/check_login.js"></script>
+  <script src="js/check_role_admin.js"></script>
   

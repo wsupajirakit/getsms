@@ -151,4 +151,4 @@
   </html>
   <script src="js/tab_menu.js"></script>
   <script src="js/check_login.js"></script>
-  <script src="js/check_role_admin.js"></script>
+  <script src="js/check_role_manager.js"></script>

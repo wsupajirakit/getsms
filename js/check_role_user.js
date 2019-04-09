@@ -1,4 +1,4 @@
-if (user.role == "") {
+if (user.role != "user") {
     location.href = "login.php";
 }
 // else if (user.role == "admin") {
@@ -8,4 +8,4 @@ if (user.role == "") {
 //     location.href = "home_manager.php";
 // } else if (user.role == "user") {
 //     location.href = "home_user.php";
-// }
+// }s
