@@ -48,5 +48,4 @@
     $('.tab:eq(5)').addClass(' current');
   }
 
-
 </script>

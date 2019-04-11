@@ -4,6 +4,7 @@
 	box-sizing: border-box;
 } */
 @import url("https://fonts.googleapis.com/css?family=Kanit:300,400,500,600,700");
+
 body {
   background-color: gray;
   font-family: "Kanit", sans-serif;
@@ -152,6 +153,7 @@ input {
   height: 40px;
   padding: 0 20px;
 }
+
 .select {
   font-family: Kanit;
   /* color: #333333; */
@@ -166,14 +168,14 @@ input {
   background-color: #f7f7f7;
   border: 1px solid #e6e6e6;
 }
-.select:focus {
-    box-shadow: none !important;
-    /* outline-color : red !important; */
-    /* border-color: #80bdff; */
-    outline: 0;
-    /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 189, 255, 0.5); */
-}
 
+.select:focus {
+  box-shadow: none !important;
+  /* outline-color : red !important; */
+  /* border-color: #80bdff; */
+  outline: 0;
+  /* box-shadow: inset 0 1px 2px rgba(0, 0, 0, 0.075), 0 0 5px rgba(128, 189, 255, 0.5); */
+}
 
 /*------------------------------------------------------------------
 [ Focus Input ]*/
@@ -259,25 +261,67 @@ input {
   z-index: 1;
 }
 
+/* .reset-password-form-btn {
+  cursor: pointer;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 0 20px;
+  width: 50%;
+  height: 60px;
+  background-color: #464646;
+  border-radius: 10px;
+  font-family: Kanit;
+  font-size: 16px;
+  color: #fff;
+  line-height: 1.2;
+  -webkit-transition: all 0.4s;
+  -o-transition: all 0.4s;
+  -moz-transition: all 0.4s;
+  transition: all 0.4s;
+  position: relative;
+  z-index: 1;
+} */
+
+.password-reset {
+  font-family: Kanit;
+  font-size: 14px;
+  color: #999999;
+  line-height: 1.5;
+}
+.password-reset:hover {
+  color: #999999;
+  /* transform: scale(1.1); */
+}
+
+.bo1 {
+  border-bottom: 1px solid #999999;
+}
 
 @media (max-width: 768px) {
   .wrap-login {
     padding-left: 60px;
     padding-right: 60px;
   }
-  .table-responsive !important{
-    height: 400px;
-  }
-}
-@media (max-height: 500px) {
-  .table-responsive !important{
+
+  .table-responsive !important {
     height: 400px;
   }
 }
 
-  @media (max-width: 576px) {
-    .wrap-login {
-      padding-left: 15px;
-      padding-right: 15px;
-    }
+@media (max-height: 500px) {
+  .table-responsive !important {
+    height: 400px;
   }
+}
+
+@media (max-width: 576px) {
+  .wrap-login {
+    padding-left: 15px;
+    padding-right: 15px;
+  }
+}

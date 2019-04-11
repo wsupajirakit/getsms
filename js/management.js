@@ -147,8 +147,8 @@ $(document).on('click', '#btn_save', function() {
     "assigned_user_id": "19x1",
     "password": password,
     "email": email,
-    "role": role
-
+    "role": role,
+    "verified": "false",
   };
 
   dataJson = JSON.stringify(data);
