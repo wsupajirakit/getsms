@@ -1,6 +1,7 @@
 if (user.role != "user") {
     location.href = "login.php";
 }
+
 // else if (user.role == "admin") {
 //     location.href = "management.php";
 

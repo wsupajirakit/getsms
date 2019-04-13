@@ -103,7 +103,7 @@
               </div>
 
               <div class="container-login-form-btn m-t-30 p-b-33">
-                <button type="submit" class="login-form-btn" id="btn_login">
+                <button type="submit" class="login-form-btn" id="btn_login" style="border: none;outline:none;">
                   ล็อกอิน
                 </button>
               </div>
@@ -152,10 +152,16 @@
         </div>
 
       </div>
-      <div class="modal-footer" style="padding-left: 33%;">
-      <button type="button" class="login-form-btn mr-auto" id="reset_password" style="width:300px;">รีเซ็ตรหัสผ่าน</button>
-
+      <div class="modal-footer" >
+        <div class="col-md-3">
+        </div>
+          <div class="col-md-6 text-md-center">
+            <button type="button" class="btn-upload" id="reset_password" style="border: none;outline:none;">รีเซ็ตรหัสผ่าน</button>
+          </div>
+          <div class="col-md-3">
+          </div>
       </div>
+
     </div>
   </div>
 </div>

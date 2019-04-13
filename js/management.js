@@ -149,6 +149,8 @@ $(document).on('click', '#btn_save', function() {
     "email": email,
     "role": role,
     "verified": "false",
+    // "image": "dddd.png",
+
   };
 
   dataJson = JSON.stringify(data);

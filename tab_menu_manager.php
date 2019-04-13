@@ -22,7 +22,7 @@
   var pathname = window.location.pathname.match(/[^\/]+$/)[0];
   if (pathname == 'home_manager.php') {
     $('.tab:eq(0)').addClass(' current');
-  }else if (pathname == 'index.php') {
+  }else if (pathname == 'index-manager.php') {
     $('.tab:eq(1)').addClass(' current');
   }
   else if (pathname == 'profile_manger.php') {

@@ -56,7 +56,7 @@ $(document).on('submit', '#form_login', function(e) {
     Swal.showLoading();
 
   $.ajax({
-    url: "http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=SELECT%20username%20,%20role%20,%20verified%20,%20id%20,%20email%20FROM%20MMember%20WHERE%20username%20=%27" + username + "%27%20AND%20password%20=%27" + password + "%27;",
+    url: "http://35.240.190.216/seedstorage/webservice.php?operation=query&sessionName=7e78e2605ca477c4eaf19&query=SELECT%20username%20,%20role%20,%20verified%20,%20id%20,%20password%20,%20image%20,%20email%20FROM%20MMember%20WHERE%20username%20=%27" + username + "%27%20AND%20password%20=%27" + password + "%27;",
     method: "POST",
     success: function(response) {
 
@@ -68,11 +68,14 @@ $(document).on('submit', '#form_login', function(e) {
           return false;
         }
         // console.log(response);
+        // return;
         var user = {
           'username': response.result[0].username,
           'id': response.result[0].id,
           'role': response.result[0].role,
           'email': response.result[0].email,
+          'image': response.result[0].image,
+          'password': response.result[0].password,
         };
         $.removeCookie('user', {
           path: '/'
@@ -81,13 +84,13 @@ $(document).on('submit', '#form_login', function(e) {
           expires: 7,
           path: '/'
         });
-        // if (user.role == "admin") {
-        //   location.href = "management.php";
-        // } else if (user.role == "manager") {
-        //   location.href = "home_manager.php";
-        // } else if (user.role == "user") {
-        //   location.href = "home_user.php";
-        // }
+        if (user.role == "admin") {
+          location.href = "management.php";
+        } else if (user.role == "manager") {
+          location.href = "home_manager.php";
+        } else if (user.role == "user") {
+          location.href = "home_user.php";
+        }
 
 
       } else {
